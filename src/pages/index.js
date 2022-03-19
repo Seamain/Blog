@@ -6,6 +6,7 @@ import {rhythm} from "../utils/typography";
 
 export default ({data}) => {
     const posts = data.directus.article
+    const title = data.site.siteMetadata.title
 
     return(
         <Layout>
@@ -16,7 +17,7 @@ export default ({data}) => {
             border-bottom: 1px solid;
           `}
                 >
-                    Seamain's Blog
+                    {title}
                 </h1>
                 {posts.map((post) => (
                     <div key={post.id}>
@@ -51,6 +52,13 @@ export default ({data}) => {
 
 export const query = graphql`
     query {
+        site{
+            siteMetadata{
+                title
+            }
+        }
+    }
+        
         directus {
             article {
                 id
