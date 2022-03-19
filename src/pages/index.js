@@ -16,7 +16,7 @@ export default ({data}) => {
             border-bottom: 1px solid;
           `}
                 >
-                    Amazing Pandas Eating Things
+                    Seamain's Blog
                 </h1>
                 {posts.map((post) => (
                     <div key={post.id}>
